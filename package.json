@@ -1,0 +1,22 @@
+{
+  "name": "strict-mode",
+  "version": "0.0.1",
+  "description": "enables strict mode in your package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fibo/strict-mode.git"
+  },
+  "keywords": [
+    "strict"
+  ],
+  "author": "fibo",
+  "license": [ {
+    "type": "MIT",
+    "url": "http://fibo.mit-license.org/"
+  } ],
+  "readmeFilename": "README.md"
+}
