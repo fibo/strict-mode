@@ -1,6 +1,6 @@
 {
   "name": "strict-mode",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "enables strict mode in your package",
   "main": "index.js",
   "scripts": {

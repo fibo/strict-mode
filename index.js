@@ -1,9 +1,9 @@
 
 'use strict'
 
-// All credits goes to isaacs and its use-strict
+// All credits goes to isaacs and its use-strict package
 
-// module api is Locked, so it will not change
+// The module api is in *Locked* state, so it will not change
 // see http://nodejs.org/api/modules.html
 // that is why I just copyed and pasted the orig module wrapper
 var origWrapper         = '(function (exports, require, module, __filename, __dirname) { '
@@ -14,7 +14,7 @@ module.exports = function strictMode(callback) {
   if (typeof callback !== 'function')
     throw new TypeError()
 
-  // avoid nested require('strict-mode')
+  // Avoid nested require('strict-mode')
   if (strictModeExecuting)
     throw new Error('Nested strict-mode calls')
 
