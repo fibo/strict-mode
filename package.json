@@ -1,10 +1,10 @@
 {
   "name": "strict-mode",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "enables strict mode in your package",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --bail --require should --reporter nyan"
   },
   "repository": {
     "type": "git",
@@ -14,9 +14,15 @@
     "strict"
   ],
   "author": "fibo",
-  "license": [ {
-    "type": "MIT",
-    "url": "http://fibo.mit-license.org/"
-  } ],
-  "readmeFilename": "README.md"
+  "license": [
+    {
+      "type": "MIT",
+      "url": "http://fibo.mit-license.org/"
+    }
+  ],
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "should": "~3.1.0"
+  }
 }

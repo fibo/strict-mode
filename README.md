@@ -30,7 +30,7 @@ require('strict-mode')(function () {
 
 # Motivation
 
-Strict mode is a best practice most of people will agree.
+[Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode) is a best practice most of developers will agree.
 
 Adding a `"use strict";` on top of every *.js* file in your package could
 
@@ -44,7 +44,7 @@ it makes **all** modules in Node get loaded in strict mode.
 
 # Credits
 
-Code**stolen** from isaacs' [use-strict][1].
+Code  **stolen**   from isaacs' [use-strict][1].
 
 # License
 

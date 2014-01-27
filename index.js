@@ -12,7 +12,7 @@ var origWrapper         = '(function (exports, require, module, __filename, __di
 
 module.exports = function strictMode(callback) {
   if (typeof callback !== 'function')
-    throw new TypeError()
+    throw new TypeError('Not a function')
 
   // Avoid nested require('strict-mode')
   if (strictModeExecuting)
