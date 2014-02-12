@@ -1,7 +1,7 @@
 
 var module     = require('module')
   , should     = require('should')
-  , strictMode = require('./index')
+  , strictMode = require('../index')
 
 var origWrapper         = '(function (exports, require, module, __filename, __dirname) { '
 
@@ -32,3 +32,4 @@ describe('strict-mode', function () {
     })
   })
 })
+
