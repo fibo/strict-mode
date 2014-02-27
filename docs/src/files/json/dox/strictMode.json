@@ -1,0 +1,18 @@
+[
+    {
+        "tags": [],
+        "description": {
+            "full": "@param {Function} callback containing caller package's exports statements",
+            "summary": "@param {Function} callback containing caller package's exports statements",
+            "body": ""
+        },
+        "ignore": false,
+        "code": "module.exports = function strictMode (callback) {\n  if (typeof callback !== 'function')\n    throw new TypeError('Not a function')\n\n  // Avoid nested require('strict-mode')\n  if (strictModeExecuting)\n    throw new Error('Nested strict-mode calls')\n\n  strictModeExecuting = true\n\n  var module = require('module')\n  module.wrapper[0] = strictWrapper\n\n  // Every require in this callback will load modules in strict mode.\n  try {\n    callback()\n  }\n  catch(err) {\n    console.error(err.stack)\n  }\n\n  // Restore orig module wrapper, play well with others.\n  module.wrapper[0] = origWrapper\n}",
+        "ctx": {
+            "type": "method",
+            "receiver": "module",
+            "name": "exports",
+            "string": "module.exports()"
+        }
+    }
+]

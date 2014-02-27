@@ -1,8 +1,6 @@
-# strict-mode
-
-> enables strict mode in your package
-
-[![Build Status](https://travis-ci.org/fibo/strict-mode.png?branch=master)](https://travis-ci.org/fibo/strict-mode.png?branch=master) [![NPM version](https://badge.fury.io/js/strict-mode.png)](http://badge.fury.io/js/strict-mode)
+---
+layout: 'default'
+---
 
 
 # Install
@@ -49,8 +47,4 @@ it makes **all** modules in Node get loaded in strict mode.
 Code  **stolen**   from isaacs' [use-strict][1].
 
 
-
-# License
-
-[MIT](http://fibo.mit-license.org/)
 
