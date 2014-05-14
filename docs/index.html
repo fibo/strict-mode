@@ -1,0 +1,97 @@
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>strict-mode</title>
+
+  <!-- Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1//css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1//css/bootstrap-theme.min.css">
+</head>
+<body style>
+  <div class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a href=./ class="navbar-brand">strict-mode</a>
+      </div>
+
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li ><a href="./api.html">api</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/fibo/strict-mode">repo</a></li>
+
+          <li><a href="http://g14n.info">about me</a></li>
+        </ul>
+      </div>
+    </div> <!-- div class="container" -->
+  </div> <!-- div class="navbar" -->
+
+  <div class="container">
+
+    <div style="height: 50px;"></div>
+
+
+
+<h1 id="strict-mode">strict-mode</h1>
+<blockquote>
+<p>enables strict mode in your package</p>
+</blockquote>
+<p><a href="https://travis-ci.org//strict-mode.png?branch=master"><img src="https://travis-ci.org//strict-mode.png?branch=master" alt="Build Status"></a> <a href="http://badge.fury.io/js/strict-mode"><img src="https://badge.fury.io/js/strict-mode.png" alt="NPM version"></a> <a href="https://gemnasium.com//strict-mode"><img src="https://gemnasium.com//strict-mode.png" alt="Dependency Status"></a> <a href="https://waffle.io//strict-mode"><img src="https://badge.waffle.io//strict-mode.png?label=ready&amp;title=Ready" alt="Stories in Ready"></a></p>
+<h1 id="installation">Installation</h1>
+<p>With <a href="https://npmjs.org/">npm</a> do</p>
+<pre><code class="lang-bash">npm install strict-mode
+</code></pre>
+<h1 id="usage">Usage</h1>
+<p>Suppose your <em>package.json</em> main attribute is the <code>npm init</code> default <em>index.js</em>.</p>
+<p>If you want that all the modules in your package has strict mode enabled,
+just wrap your <em>index.js</em> this way</p>
+<pre><code>require(&#39;strict-mode&#39;)(function () {
+
+// your index.js content
+
+// every *require* call inside this function will have strict mode enabled
+
+})
+</code></pre><h1 id="motivation">Motivation</h1>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode">Strict mode</a> is a best practice most of developers will agree.</p>
+<p>Adding a <code>&quot;use strict&quot;;</code> on top of every <em>.js</em> file in your package could</p>
+<ul>
+<li>require a big effort</li>
+<li>be error proning</li>
+<li>make complain jshint</li>
+<li>be a problem when concatenating files</li>
+</ul>
+<p>On the other hand the [use-strict][1] package solution is too invasive, cause
+it makes <strong>all</strong> modules in Node get loaded in strict mode.</p>
+<h1 id="credits">Credits</h1>
+<p>Code  <strong>stolen</strong>   from isaacs&#39; [use-strict][1].</p>
+<h1 id="license">License</h1>
+<p><a href="http://fibo.mit-license.org/">MIT</a></p>
+
+
+  </div> <!-- div class="container" -->
+
+  <script type="text/javascript"> <!-- Start of Google Analytics tracking code -->
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12635045-12']);
+    _gaq.push(['_trackPageview']);
+
+   (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+
+  </script> <!-- End of Google Analytics tracking code -->
+</body>
+</html>
+

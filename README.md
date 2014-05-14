@@ -2,15 +2,14 @@
 
 > enables strict mode in your package
 
-[![Build Status](https://travis-ci.org/fibo/strict-mode.png?branch=master)](https://travis-ci.org/fibo/strict-mode.png?branch=master) [![NPM version](https://badge.fury.io/js/strict-mode.png)](http://badge.fury.io/js/strict-mode)
+[![Build Status](https://travis-ci.org//strict-mode.png?branch=master)](https://travis-ci.org//strict-mode.png?branch=master) [![NPM version](https://badge.fury.io/js/strict-mode.png)](http://badge.fury.io/js/strict-mode) [![Dependency Status](https://gemnasium.com//strict-mode.png)](https://gemnasium.com//strict-mode) [![Stories in Ready](https://badge.waffle.io//strict-mode.png?label=ready&title=Ready)](https://waffle.io//strict-mode)
 
-
-# Install
+# Installation
 
 With [npm](https://npmjs.org/) do
 
 ```bash
-npm install package-name
+npm install strict-mode
 ```
 
 # Usage
@@ -47,7 +46,6 @@ it makes **all** modules in Node get loaded in strict mode.
 # Credits
 
 Code  **stolen**   from isaacs' [use-strict][1].
-
 
 
 # License
