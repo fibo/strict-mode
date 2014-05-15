@@ -2,7 +2,7 @@
 
 > enables strict mode in your package
 
-[![Build Status](https://travis-ci.org//strict-mode.png?branch=master)](https://travis-ci.org//strict-mode.png?branch=master) [![NPM version](https://badge.fury.io/js/strict-mode.png)](http://badge.fury.io/js/strict-mode) [![Dependency Status](https://gemnasium.com//strict-mode.png)](https://gemnasium.com//strict-mode) [![Stories in Ready](https://badge.waffle.io//strict-mode.png?label=ready&title=Ready)](https://waffle.io//strict-mode)
+[![NPM version](https://badge.fury.io/js/strict-mode.png)](http://badge.fury.io/js/strict-mode) [![Build Status](https://travis-ci.org/fibo/strict-mode.png?branch=master)](https://travis-ci.org/fibo/strict-mode.png?branch=master) [![Dependency Status](https://gemnasium.com/fibo/strict-mode.png)](https://gemnasium.com/fibo/strict-mode) [![Stories in Ready](https://badge.waffle.io/fibo/strict-mode.png?label=ready&title=Ready)](https://waffle.io/fibo/strict-mode)
 
 # Installation
 
@@ -31,9 +31,7 @@ require('strict-mode')(function () {
 
 # Motivation
 
-[Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode) is a best practice most of developers will agree.
-
-Adding a `"use strict";` on top of every *.js* file in your package could
+[Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode) is a best practice but adding a `"use strict";` on top of every *.js* file in your package could
 
 * require a big effort
 * be error proning
@@ -46,7 +44,6 @@ it makes **all** modules in Node get loaded in strict mode.
 # Credits
 
 Code  **stolen**   from isaacs' [use-strict][1].
-
 
 # License
 

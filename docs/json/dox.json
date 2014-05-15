@@ -1,19 +1,28 @@
 {
     "strictMode": [
         {
-            "tags": [],
+            "tags": [
+                {
+                    "type": "param",
+                    "types": [
+                        "Function"
+                    ],
+                    "name": "callback",
+                    "description": "containing caller package's exports statements"
+                }
+            ],
             "description": {
-                "full": "@param {Function} callback containing caller package's exports statements",
-                "summary": "@param {Function} callback containing caller package's exports statements",
-                "body": ""
+                "full": "Package exports wrapper\n\nAll credits goes to isaacs and its use-strict package\nThe module api is in *Locked* state, so it will not change\nsee http://nodejs.org/api/modules.html\nthat is why I just copyed and pasted the orig module wrapper.\n\nBy the way, in test/strictMode.js there is a test that checks if\nthe content of *origWrapper* needs an update.\n",
+                "summary": "Package exports wrapper",
+                "body": "All credits goes to isaacs and its use-strict package\nThe module api is in *Locked* state, so it will not change\nsee http://nodejs.org/api/modules.html\nthat is why I just copyed and pasted the orig module wrapper.\n\nBy the way, in test/strictMode.js there is a test that checks if\nthe content of *origWrapper* needs an update.\n"
             },
+            "isPrivate": false,
             "ignore": false,
-            "code": "module.exports = function strictMode (callback) {\n  if (typeof callback !== 'function')\n    throw new TypeError('Not a function')\n\n  // Avoid nested require('strict-mode')\n  if (strictModeExecuting)\n    throw new Error('Nested strict-mode calls')\n\n  strictModeExecuting = true\n\n  var module = require('module')\n  module.wrapper[0] = strictWrapper\n\n  // Every require in this callback will load modules in strict mode.\n  try {\n    callback()\n  }\n  catch(err) {\n    console.error(err.stack)\n  }\n\n  // Restore orig module wrapper, play well with others.\n  module.wrapper[0] = origWrapper\n}",
+            "code": "function strictMode (callback) {\n  if (typeof callback !== 'function')\n    throw new TypeError('Not a function')\n\n  // Avoid nested require('strict-mode')\n  if (strictModeExecuting)\n    throw new Error('Nested strict-mode calls')\n\n  strictModeExecuting = true\n\n  var module = require('module')\n  module.wrapper[0] = strictWrapper\n\n  // Every require in this callback will load modules in strict mode.\n  try {\n    callback()\n  }\n  catch(err) {\n    console.error(err.stack)\n  }\n\n  // Restore orig module wrapper, play well with others.\n  module.wrapper[0] = origWrapper\n}\n\nmodule.exports = strictMode",
             "ctx": {
-                "type": "method",
-                "receiver": "module",
-                "name": "exports",
-                "string": "module.exports()"
+                "type": "function",
+                "name": "strictMode",
+                "string": "strictMode()"
             }
         }
     ]

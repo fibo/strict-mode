@@ -1,6 +1,6 @@
 {
   "name": "strict-mode",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "enables strict mode in your package",
   "main": "index.js",
   "scripts": {
@@ -23,8 +23,8 @@
   "readmeFilename": "README.md",
   "homepage": "http://www.g14n.info/strict-mode",
   "devDependencies": {
-    "fibo-gulptasks": "git+ssh://git@github.com:fibo/fibo-gulptasks",
-    "mocha": "~1.18.2",
-    "should": "~3.3.1"
+    "should": "^3.3.1",
+    "mocha": "^1.18.2",
+    "gulp": "^3.6.2"
   }
 }
