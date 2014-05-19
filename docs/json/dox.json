@@ -3,6 +3,10 @@
         {
             "tags": [
                 {
+                    "type": "api",
+                    "visibility": "private"
+                },
+                {
                     "type": "param",
                     "types": [
                         "Function"
@@ -12,17 +16,17 @@
                 }
             ],
             "description": {
-                "full": "Package exports wrapper\n\nAll credits goes to isaacs and its use-strict package\nThe module api is in *Locked* state, so it will not change\nsee http://nodejs.org/api/modules.html\nthat is why I just copyed and pasted the orig module wrapper.\n\nBy the way, in test/strictMode.js there is a test that checks if\nthe content of *origWrapper* needs an update.\n",
-                "summary": "Package exports wrapper",
-                "body": "All credits goes to isaacs and its use-strict package\nThe module api is in *Locked* state, so it will not change\nsee http://nodejs.org/api/modules.html\nthat is why I just copyed and pasted the orig module wrapper.\n\nBy the way, in test/strictMode.js there is a test that checks if\nthe content of *origWrapper* needs an update.\n"
+                "full": "<p>Package exports wrapper</p>\n<p>All credits goes to isaacs and its use-strict package\nThe module api is in <em>Locked</em> state, so it will not change\nsee <a href=\"http://nodejs.org/api/modules.html\">http://nodejs.org/api/modules.html</a>\nthat is why I just copyed and pasted the orig module wrapper.</p>\n<p>By the way, in test/strictMode.js there is a test that checks if\nthe content of <em>origWrapper</em> needs an update.</p>\n",
+                "summary": "<p>Package exports wrapper</p>\n",
+                "body": "<p>All credits goes to isaacs and its use-strict package\nThe module api is in <em>Locked</em> state, so it will not change\nsee <a href=\"http://nodejs.org/api/modules.html\">http://nodejs.org/api/modules.html</a>\nthat is why I just copyed and pasted the orig module wrapper.</p>\n<p>By the way, in test/strictMode.js there is a test that checks if\nthe content of <em>origWrapper</em> needs an update.</p>\n"
             },
-            "isPrivate": false,
+            "isPrivate": true,
             "ignore": false,
-            "code": "function strictMode (callback) {\n  if (typeof callback !== 'function')\n    throw new TypeError('Not a function')\n\n  // Avoid nested require('strict-mode')\n  if (strictModeExecuting)\n    throw new Error('Nested strict-mode calls')\n\n  strictModeExecuting = true\n\n  var module = require('module')\n  module.wrapper[0] = strictWrapper\n\n  // Every require in this callback will load modules in strict mode.\n  try {\n    callback()\n  }\n  catch(err) {\n    console.error(err.stack)\n  }\n\n  // Restore orig module wrapper, play well with others.\n  module.wrapper[0] = origWrapper\n}\n\nmodule.exports = strictMode",
+            "code": "function exportsWrapper (callback) {\n  \"use strict\";\n\n  if (typeof callback !== 'function')\n    throw new TypeError('Not a function')\n\n  // Avoid nested require('strict-mode')\n  if (strictModeExecuting)\n    throw new Error('Nested strict-mode calls')\n\n  strictModeExecuting = true\n\n  var module = require('module')\n  module.wrapper[0] = strictWrapper\n\n  // Every require in this callback will load modules in strict mode.\n  try {\n    callback()\n  }\n  catch (err) {\n      console.error(err.stack)\n  }\n\n  // Restore orig module wrapper, play well with others.\n  module.wrapper[0] = origWrapper\n}\n\nmodule.exports = exportsWrapper",
             "ctx": {
                 "type": "function",
-                "name": "strictMode",
-                "string": "strictMode()"
+                "name": "exportsWrapper",
+                "string": "exportsWrapper()"
             }
         }
     ]

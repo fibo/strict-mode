@@ -14,7 +14,7 @@ npm install strict-mode
 
 # Usage
 
-Suppose your *package.json* main attribute is the `npm init` default *index.js*.
+Suppose your *package.json* main attribute is the `npm init` default, i.e. *index.js*.
 
 If you want that all the modules in your package has strict mode enabled,
 just wrap your *index.js* this way
@@ -43,9 +43,11 @@ it makes **all** modules in Node get loaded in strict mode.
 
 # Credits
 
-Code  **stolen**   from isaacs' [use-strict][1].
+Code **stolen** from isaacs' [use-strict][1].
 
 # License
 
 [MIT](http://fibo.mit-license.org/)
+
+[1]: https://npmjs.org/package/use-strict
 

@@ -13,7 +13,10 @@
   "keywords": [
     "strict"
   ],
-  "author": "fibo",
+  "author": {
+    "name": "fibo",
+    "url": "http://g14n.info"
+  },
   "license": [
     {
       "type": "MIT",
@@ -21,10 +24,9 @@
     }
   ],
   "readmeFilename": "README.md",
-  "homepage": "http://www.g14n.info/strict-mode",
+  "homepage": "http://g14n.info/strict-mode",
   "devDependencies": {
     "should": "^3.3.1",
-    "mocha": "^1.18.2",
-    "gulp": "^3.6.2"
+    "mocha": "^1.18.2"
   }
 }

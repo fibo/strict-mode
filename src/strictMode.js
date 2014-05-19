@@ -1,6 +1,4 @@
 
-'use strict'
-
 var origWrapper         = '(function (exports, require, module, __filename, __dirname) { '
   , strictWrapper       = origWrapper + '"use strict";'
   , strictModeExecuting = false
@@ -16,10 +14,13 @@ var origWrapper         = '(function (exports, require, module, __filename, __di
  * By the way, in test/strictMode.js there is a test that checks if
  * the content of *origWrapper* needs an update.
  *
+ * @api private
  * @param {Function} callback containing caller package's exports statements
  */
 
-function strictMode (callback) {
+function exportsWrapper (callback) {
+  "use strict";
+
   if (typeof callback !== 'function')
     throw new TypeError('Not a function')
 
@@ -36,13 +37,13 @@ function strictMode (callback) {
   try {
     callback()
   }
-  catch(err) {
-    console.error(err.stack)
+  catch (err) {
+      console.error(err.stack)
   }
 
   // Restore orig module wrapper, play well with others.
   module.wrapper[0] = origWrapper
 }
 
-module.exports = strictMode
+module.exports = exportsWrapper
 
