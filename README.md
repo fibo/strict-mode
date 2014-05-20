@@ -2,7 +2,7 @@
 
 > enables strict mode in your package
 
-[![NPM version](https://badge.fury.io/js/strict-mode.png)](http://badge.fury.io/js/strict-mode) [![Build Status](https://travis-ci.org/fibo/strict-mode.png?branch=master)](https://travis-ci.org/fibo/strict-mode.png?branch=master) [![Dependency Status](https://gemnasium.com/fibo/strict-mode.png)](https://gemnasium.com/fibo/strict-mode) [![Stories in Ready](https://badge.waffle.io/fibo/strict-mode.png?label=ready&title=Ready)](https://waffle.io/fibo/strict-mode)
+[![NPM version](https://badge.fury.io/js/strict-mode.png)](http://badge.fury.io/js/strict-mode) [![Build Status](https://travis-ci.org/fibo/strict-mode.png?branch=master)](https://travis-ci.org/fibo/strict-mode.png?branch=master) [![Dependency Status](https://gemnasium.com/fibo/strict-mode.png)](https://gemnasium.com/fibo/strict-mode)
 
 # Installation
 
@@ -14,7 +14,7 @@ npm install strict-mode
 
 # Usage
 
-Suppose your *package.json* main attribute is the `npm init` default, i.e. *index.js*.
+Suppose that the *main attribute* in your *package.json* is *index.js*.
 
 If you want that all the modules in your package has strict mode enabled,
 just wrap your *index.js* this way
@@ -39,7 +39,7 @@ require('strict-mode')(function () {
 * be a problem when concatenating files
 
 On the other hand the [use-strict][1] package solution is too invasive, cause
-it makes **all** modules in Node get loaded in strict mode.
+it applies strictness to **all** future modules loaded.
 
 # Credits
 
