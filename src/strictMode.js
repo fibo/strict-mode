@@ -1,20 +1,19 @@
 
+// The module api is in *Locked* state, so it will not change
+// see http://nodejs.org/api/modules.html
+// that is why I just copyed and pasted the orig module wrapper.
+//
+// By the way, in test/strictMode.js there is a test that checks if
+// the content of *origWrapper* needs an update.
+
 var origWrapper         = '(function (exports, require, module, __filename, __dirname) { '
   , strictWrapper       = origWrapper + '"use strict";'
   , strictModeExecuting = false
 
-/**
- * Package exports wrapper
+/* Package `exports` wrapper
  *
- * All credits goes to isaacs and its use-strict package
- * The module api is in *Locked* state, so it will not change
- * see http://nodejs.org/api/modules.html
- * that is why I just copyed and pasted the orig module wrapper.
+ * See [Usage](./#usage)
  *
- * By the way, in test/strictMode.js there is a test that checks if
- * the content of *origWrapper* needs an update.
- *
- * @api private
  * @param {Function} callback containing caller package's exports statements
  */
 
