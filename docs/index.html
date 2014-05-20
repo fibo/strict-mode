@@ -8,16 +8,28 @@
   <title>strict-mode</title>
 
   <!-- Bootstrap -->
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1//css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1//css/bootstrap.min.css">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1//css/bootstrap-theme.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1//css/bootstrap-theme.min.css">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1//js/bootstrap.min.js"></script>
+  <!-- Bootstrap END -->
+
 </head>
 <body style>
+
   <div class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
     <div class="container">
       <div class="navbar-header">
+        <!-- GitHub ribbon -->
+        <a href="https://github.com/fibo/strict-mode"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+
         <a href="./" class="navbar-brand">strict-mode</a>
       </div>
 
@@ -27,8 +39,6 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://github.com/fibo/strict-mode">repo</a></li>
-
 	  <li><a href="http://g14n.info" >about me</a></li>
         </ul>
       </div>
@@ -45,13 +55,13 @@
 <blockquote>
 <p>enables strict mode in your package</p>
 </blockquote>
-<p><a href="http://badge.fury.io/js/strict-mode"><img src="https://badge.fury.io/js/strict-mode.png" alt="NPM version"></a> <a href="https://travis-ci.org/fibo/strict-mode.png?branch=master"><img src="https://travis-ci.org/fibo/strict-mode.png?branch=master" alt="Build Status"></a> <a href="https://gemnasium.com/fibo/strict-mode"><img src="https://gemnasium.com/fibo/strict-mode.png" alt="Dependency Status"></a> <a href="https://waffle.io/fibo/strict-mode"><img src="https://badge.waffle.io/fibo/strict-mode.png?label=ready&amp;title=Ready" alt="Stories in Ready"></a></p>
+<p><a href="http://badge.fury.io/js/strict-mode"><img src="https://badge.fury.io/js/strict-mode.png" alt="NPM version"></a> <a href="https://travis-ci.org/fibo/strict-mode.png?branch=master"><img src="https://travis-ci.org/fibo/strict-mode.png?branch=master" alt="Build Status"></a> <a href="https://gemnasium.com/fibo/strict-mode"><img src="https://gemnasium.com/fibo/strict-mode.png" alt="Dependency Status"></a></p>
 <h1 id="installation">Installation</h1>
 <p>With <a href="https://npmjs.org/">npm</a> do</p>
 <pre><code class="lang-bash">npm install strict-mode
 </code></pre>
 <h1 id="usage">Usage</h1>
-<p>Suppose your <em>package.json</em> main attribute is the <code>npm init</code> default, i.e. <em>index.js</em>.</p>
+<p>Suppose that the <em>main attribute</em> in your <em>package.json</em> is <em>index.js</em>.</p>
 <p>If you want that all the modules in your package has strict mode enabled,
 just wrap your <em>index.js</em> this way</p>
 <pre><code>require(&#39;strict-mode&#39;)(function () {
@@ -70,7 +80,7 @@ just wrap your <em>index.js</em> this way</p>
 <li>be a problem when concatenating files</li>
 </ul>
 <p>On the other hand the <a href="https://npmjs.org/package/use-strict">use-strict</a> package solution is too invasive, cause
-it makes <strong>all</strong> modules in Node get loaded in strict mode.</p>
+it applies strictness to <strong>all</strong> future modules loaded.</p>
 <h1 id="credits">Credits</h1>
 <p>Code <strong>stolen</strong> from isaacs&#39; <a href="https://npmjs.org/package/use-strict">use-strict</a>.</p>
 <h1 id="license">License</h1>

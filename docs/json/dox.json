@@ -12,7 +12,7 @@
                         "Function"
                     ],
                     "name": "callback",
-                    "description": "containing caller package's exports statements"
+                    "description": "<p>containing caller package&#39;s exports statements</p>\n"
                 }
             ],
             "description": {
