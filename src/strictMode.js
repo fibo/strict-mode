@@ -10,9 +10,10 @@ var origWrapper         = '(function (exports, require, module, __filename, __di
   , strictWrapper       = origWrapper + '"use strict";'
   , strictModeExecuting = false
 
-/* Package `exports` wrapper
+/**
+ * Package `exports` wrapper
  *
- * See [Usage](./#usage)
+ * See [Usage](//g14n.info/strict-mode/#usage)
  *
  * @param {Function} callback containing caller package's exports statements
  */
@@ -30,18 +31,33 @@ function exportsWrapper (callback) {
   strictModeExecuting = true
 
   var module = require('module')
-  module.wrapper[0] = strictWrapper
 
-  // Every require in this callback will load modules in strict mode.
-  try {
+  if (module.wrapper) {
+    if (module.wrapper[0] === origWrapper) {
+      module.wrapper[0] = strictWrapper
+
+      // Every require in this callback will load modules in strict mode.
+      try {
+        callback()
+      }
+      catch (err) {
+          console.error(err.stack)
+      }
+
+      // Restore orig module wrapper, play well with others.
+      module.wrapper[0] = origWrapper
+    } else {
+      // If module.wrapper[0] changed, do not switch strict mode on.
+      callback()
+    }
+  } else {
+    // If you enter here, probably you are using *browserify*
+    // which does not define module.wrapper, so do not switch strict mode on.
     callback()
-  }
-  catch (err) {
-      console.error(err.stack)
-  }
 
-  // Restore orig module wrapper, play well with others.
-  module.wrapper[0] = origWrapper
+    // TODO can a wrapper switch strict mode on properly on browserify?
+    // Something like function(){"use strict";callback();} works?
+  }
 }
 
 module.exports = exportsWrapper

@@ -19,7 +19,7 @@ Suppose that the *main attribute* in your *package.json* is *index.js*.
 If you want that all the modules in your package has strict mode enabled,
 just wrap your *index.js* this way
 
-```
+```js
 require('strict-mode')(function () {
 
 // your index.js content
