@@ -1,10 +1,10 @@
 {
   "name": "strict-mode",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "enables strict mode in your package",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --bail --require should --reporter min"
+    "test": "node test.js | ./node_modules/tap-min/bin/tap-min"
   },
   "repository": {
     "type": "git",
@@ -20,13 +20,12 @@
   "license": [
     {
       "type": "MIT",
-      "url": "http://fibo.mit-license.org/"
+      "url": "http://g14n.info/mit-license"
     }
   ],
-  "readmeFilename": "README.md",
-  "homepage": "http://g14n.info/strict-mode",
+  "homepage": "http://npm.im/strict-mode",
   "devDependencies": {
-    "should": "^3.3.1",
-    "mocha": "^1.18.2"
+    "tap-min": "^1.0.0",
+    "tape": "^4.2.0"
   }
 }
