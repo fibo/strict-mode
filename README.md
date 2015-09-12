@@ -49,7 +49,7 @@ it applies strictness to **all** future modules loaded.
 
 At the time of this writing [Node v4 stable](https://nodejs.org/en/blog/release/v4.0.0/) version was released few days ago.
 Finally we can use `class`, `let`, `const` (among other new exciting features) but you will notice that it you do not turn on strict mode an exception will raise.
-For instance, if you import file *Point2d.js* with content
+For instance, a file *Point2d.js* with content
 
 ```
 class Point2d {
@@ -60,6 +60,25 @@ class Point2d {
 }
 
 module.exports = Point2d
+```
+
+when imported will complain
+
+```
+SyntaxError: Block-scoped declarations (let, const, function, class) not yet supported outside strict mode
+```
+
+but if you wrap the import with *strict-mode* everything will just work
+
+```
+require('strict-mode')(function () {
+
+  var Point2d = require('./Point2d')
+  // require all other classes you need.
+
+  // You can also export them safely
+  exports.Point2d = Point2d
+})
 ```
 
 ## Credits
