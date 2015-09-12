@@ -5,6 +5,8 @@
   "main": "index.js",
   "browser": "browser.js",
   "scripts": {
+    "_pull": "git pull origin master && npm run gh-pages:pull",
+    "_push": "git push origin master && npm run gh-pages:push",
     "browserify:test": "browserify -e importNoStrictCode.js -o gh-pages/test.js",
     "gh-pages:push": "git subtree --prefix gh-pages push origin gh-pages",
     "gh-pages:pull": "git subtree --prefix gh-pages pull origin gh-pages",
