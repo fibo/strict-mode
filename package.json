@@ -3,7 +3,10 @@
   "version": "0.3.0",
   "description": "enables strict mode in your package",
   "main": "index.js",
+  "browser": "browser.js",
   "scripts": {
+    "gh-pages:push": "git subtree --prefix gh-pages push origin gh-pages",
+    "gh-pages:pull": "git subtree --prefix gh-pages pull origin gh-pages",
     "test": "node test.js | ./node_modules/tap-min/bin/tap-min"
   },
   "repository": {

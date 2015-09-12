@@ -40,8 +40,8 @@ function strictMode (callback) {
       callback()
     }
   } else {
-    // If you enter here, probably you are using *browserify*
-    // which does not define module.wrapper, so do not switch strict mode on.
+    // If you enter here, you are in a context other than server side Node.js.
+    // Since module.wrapper it is not defined do not switch strict mode on.
     callback()
   }
 }

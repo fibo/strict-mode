@@ -29,9 +29,10 @@ require('strict-mode')(function () {
 })
 ```
 
-Please note that this package is intended to be used server side. I could not
-find a way to extend its feature client side: hints and suggestions are welcome,
-[contact me](http://g14n.info) if any.
+Please note that this package is intended to be used server side.
+If used with [browserify](http://browserify.org/) it is a no op.
+I could not find a way to extend this feature client side:
+hints and suggestions are welcome, [contact me](http://g14n.info) if any.
 
 ## Motivation
 
