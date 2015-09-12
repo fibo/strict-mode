@@ -25,7 +25,11 @@ function strictMode (callback) {
 
   var module = require('module')
 
-  if (module.wrapper) {
+  if (typeof module.wrapper === 'undefined') {
+    // If you enter here, you are in a context other than server side Node.js.
+    // Since module.wrapper it is not defined do not switch strict mode on.
+    callback()
+  } else {
     if (module.wrapper[0] === origWrapper) {
       module.wrapper[0] = strictWrapper
 
@@ -39,10 +43,6 @@ function strictMode (callback) {
       // If module.wrapper[0] changed, do not switch strict mode on.
       callback()
     }
-  } else {
-    // If you enter here, you are in a context other than server side Node.js.
-    // Since module.wrapper it is not defined do not switch strict mode on.
-    callback()
   }
 }
 

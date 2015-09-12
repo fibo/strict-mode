@@ -5,6 +5,7 @@
   "main": "index.js",
   "browser": "browser.js",
   "scripts": {
+    "browserify:test": "browserify -e importNoStrictCode.js -o gh-pages/test.js",
     "gh-pages:push": "git subtree --prefix gh-pages push origin gh-pages",
     "gh-pages:pull": "git subtree --prefix gh-pages pull origin gh-pages",
     "test": "node test.js | ./node_modules/tap-min/bin/tap-min"

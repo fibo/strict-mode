@@ -1,6 +1,6 @@
 
 var module     = require('module'),
-    strictMode = require('./index'),
+    strictMode = require('strict-mode'),
     test       = require('tape')
 
 var origWrapper = '(function (exports, require, module, __filename, __dirname) { '
