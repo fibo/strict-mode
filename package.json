@@ -1,6 +1,6 @@
 {
   "name": "strict-mode",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "enables strict mode in your package",
   "main": "index.js",
   "browser": "browser.js",
