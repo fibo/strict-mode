@@ -1,12 +1,11 @@
-
 // The module api is in *Locked* state, so it will not change
 // see http://nodejs.org/api/modules.html
 // that is why I just copyed and pasted the orig module wrapper.
 //
 // By the way, in test.js checks if the content of *origWrapper* needs an update.
 
-var origWrapper         = '(function (exports, require, module, __filename, __dirname) { ',
-    strictWrapper       = origWrapper + '"use strict";'
+var origWrapper = '(function (exports, require, module, __filename, __dirname) { '
+var strictWrapper = origWrapper + '"use strict";'
 
 /**
  * Wraps module `exports`
@@ -20,8 +19,9 @@ var origWrapper         = '(function (exports, require, module, __filename, __di
 function strictMode (callback) {
   "use strict";
 
-  if (typeof callback !== 'function')
+  if (typeof callback !== 'function') {
     throw new TypeError('Argument *callback* must be a function')
+  }
 
   var module = require('module')
 
@@ -47,4 +47,3 @@ function strictMode (callback) {
 }
 
 module.exports = strictMode
-

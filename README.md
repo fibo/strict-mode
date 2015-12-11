@@ -31,8 +31,15 @@ require('strict-mode')(function () {
 
 Please note that this package is intended to be used server side.
 If used with [browserify](http://browserify.org/) it is a no op (test.html [here](http://g14n.info/strict-mode/test.html)).
-I could not find a way to extend this feature client side:
-hints and suggestions are welcome, [contact me](http://g14n.info) if any.
+
+You can install [strictify](https://www.npmjs.com/package/strictify) transform to
+enable strict mode client side.
+
+```
+npm install strictify --save-dev
+```
+
+Then add `-t strictify` option to your *browserify* build command or edit [browserify.transform](https://github.com/substack/node-browserify#browserifytransform) field in your *package.json*.
 
 ## Motivation
 
