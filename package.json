@@ -1,7 +1,7 @@
 {
   "name": "strict-mode",
   "description": "enables strict mode in your package",
-  "version": "0.4.2",
+  "version": "0.4.1",
   "homepage": "http://npm.im/strict-mode",
   "author": {
     "name": "Gianluca Casati",
@@ -16,6 +16,7 @@
     "browserify:test": "browserify -e importNoStrictCode.js -o gh-pages/test.js",
     "gh-pages:push": "git subtree --prefix gh-pages push origin gh-pages",
     "gh-pages:pull": "git subtree --prefix gh-pages pull origin gh-pages",
+    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "test": "node test.js | ./node_modules/tap-min/bin/tap-min"
   },
   "repository": {
