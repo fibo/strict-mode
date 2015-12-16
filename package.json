@@ -1,7 +1,7 @@
 {
   "name": "strict-mode",
   "description": "enables strict mode in your package",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "homepage": "http://npm.im/strict-mode",
   "author": {
     "name": "Gianluca Casati",
@@ -25,11 +25,6 @@
   "keywords": [
     "strict"
   ],
-  "author": {
-    "name": "Gianluca Casati",
-    "url": "http://g14n.info"
-  },
-  "license": "MIT",
   "devDependencies": {
     "tap-min": "^1.0.0",
     "tape": "^4.2.0"
