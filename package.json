@@ -1,7 +1,13 @@
 {
   "name": "strict-mode",
-  "version": "0.4.1",
   "description": "enables strict mode in your package",
+  "version": "0.4.1",
+  "homepage": "http://npm.im/strict-mode",
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "http://g14n.info"
+  },
+  "license": "MIT",
   "main": "index.js",
   "browser": "browser.js",
   "scripts": {
@@ -20,16 +26,10 @@
     "strict"
   ],
   "author": {
-    "name": "fibo",
+    "name": "Gianluca Casati",
     "url": "http://g14n.info"
   },
-  "license": [
-    {
-      "type": "MIT",
-      "url": "http://g14n.info/mit-license"
-    }
-  ],
-  "homepage": "http://npm.im/strict-mode",
+  "license": "MIT",
   "devDependencies": {
     "tap-min": "^1.0.0",
     "tape": "^4.2.0"
