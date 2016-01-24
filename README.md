@@ -56,7 +56,7 @@ it applies strictness to **all** future modules loaded.
 ## Use case
 
 At the time of this writing [Node v4 stable](https://nodejs.org/en/blog/release/v4.0.0/) version was released few days ago.
-Finally we can use `class`, `let`, `const` (among other new exciting features) but you will notice that it you do not turn on strict mode an exception will raise.
+Finally we can use `class`, `let`, `const` (among other new exciting features) but you will notice that if you do not turn on strict mode an exception will raise.
 For instance, a file *Point2d.js* with content
 
 ```
