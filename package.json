@@ -9,16 +9,26 @@
   },
   "license": "MIT",
   "main": "index.js",
+  "engines": {
+    "node": ">=0.12.9 <5"
+  },
   "browser": "browser.js",
   "scripts": {
     "_pull": "git pull origin master && npm run gh-pages:pull",
     "_push": "git push origin master && npm run gh-pages:push",
     "browserify:test": "browserify -e importNoStrictCode.js -o gh-pages/test.js",
+    "check-deps": "npm outdated",
     "gh-pages:push": "git subtree --prefix gh-pages push origin gh-pages",
     "gh-pages:pull": "git subtree --prefix gh-pages pull origin gh-pages",
+    "lint": "jshint *js"
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
-    "test": "node test.js | ./node_modules/tap-min/bin/tap-min"
+    "test": "tape test.js | tap-min"
   },
+  "pre-commit": [
+    "lint",
+    "test",
+    "check-deps"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/fibo/strict-mode.git"
@@ -27,6 +37,7 @@
     "strict"
   ],
   "devDependencies": {
+    "pre-commit": "^1.1.2",
     "tap-min": "^1.0.0",
     "tape": "^4.2.0"
   }
