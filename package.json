@@ -20,7 +20,7 @@
     "check-deps": "npm outdated",
     "gh-pages:push": "git subtree --prefix gh-pages push origin gh-pages",
     "gh-pages:pull": "git subtree --prefix gh-pages pull origin gh-pages",
-    "lint": "jshint *js"
+    "lint": "jshint *js",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "test": "tape test.js | tap-min"
   },
