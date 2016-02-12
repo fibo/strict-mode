@@ -1,7 +1,7 @@
 {
   "name": "strict-mode",
   "description": "enables strict mode in your package",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "homepage": "http://npm.im/strict-mode",
   "author": {
     "name": "Gianluca Casati",
