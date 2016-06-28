@@ -4,7 +4,7 @@
  *
  * It is imported by test.js and wrapped by strict-mode so it throws.
  *
- * @credits code stolen from MDN where M stands for Mozilla, not Microsoft :)
+ * @credits code stolen from MDN ( where M stands for Mozilla, not Microsoft :)
  */
 
 module.exports = function noStrictCode () {

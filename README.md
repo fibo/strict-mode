@@ -2,7 +2,7 @@
 
 > enables strict mode in your package
 
-[![Node engine](https://img.shields.io/node/v/strict-mode.svg)](https://nodejs.org/en/) [![NPM version](https://badge.fury.io/js/strict-mode.svg)](http://badge.fury.io/js/strict-mode) [![Build Status](https://travis-ci.org/fibo/strict-mode.svg?branch=master)](https://travis-ci.org/fibo/strict-mode.png?branch=master) [![Dependency Status](https://gemnasium.com/fibo/strict-mode.svg)](https://gemnasium.com/fibo/strict-mode)
+[![NPM version](https://badge.fury.io/js/strict-mode.svg)](http://badge.fury.io/js/strict-mode) [![Build Status](https://travis-ci.org/fibo/strict-mode.svg?branch=master)](https://travis-ci.org/fibo/strict-mode.png?branch=master) [![Dependency Status](https://gemnasium.com/fibo/strict-mode.svg)](https://gemnasium.com/fibo/strict-mode)
 
 [![NPM](https://nodei.co/npm-dl/strict-mode.png)](https://nodei.co/npm-dl/strict-mode/)
 
@@ -15,6 +15,9 @@ npm install strict-mode
 ```
 
 ## Usage
+
+**Please note that this package is intended to be used server side.**
+If used with [browserify](http://browserify.org/) it is a no op.
 
 Suppose that the *main attribute* in your *package.json* is *index.js*.
 
@@ -31,18 +34,6 @@ require('strict-mode')(function () {
 })
 ```
 
-Please note that this package is intended to be used server side.
-If used with [browserify](http://browserify.org/) it is a no op (test.html [here](http://g14n.info/strict-mode/test.html)).
-
-You can install [strictify](https://www.npmjs.com/package/strictify) transform to
-enable strict mode client side.
-
-```
-npm install strictify --save-dev
-```
-
-Then add `-t strictify` option to your *browserify* build command or edit [browserify.transform](https://github.com/substack/node-browserify#browserifytransform) field in your *package.json*.
-
 ## Motivation
 
 [Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode) is a best practice but adding a `"use strict";` on top of every *.js* file in your package could
@@ -52,7 +43,7 @@ Then add `-t strictify` option to your *browserify* build command or edit [brows
 * make complain jshint
 * be a problem when concatenating files
 
-On the other hand the [use-strict][1] package solution is too invasive, cause
+On the other hand the [use-strict] package solution is too invasive, cause
 it applies strictness to **all** future modules loaded.
 
 ## Use case
@@ -91,13 +82,34 @@ require('strict-mode')(function () {
 })
 ```
 
+## Bonus tip
+
+Usually you write tests importing your library. You can do that in two ways:
+
+* using `require('../../path/to/my/module')`
+* or setting `NODE_PATH=src` and using `require('my/module')`
+
+In both cases you miss the feature provided by *strict-mode*, but, you can
+use this nasty trick ( to cheat npm :)
+
+Assuming you package name is, emh *package-name*, create a
+*test/node_modules/package_name/index.js* containing
+
+```javascript
+module.exports = require('../../..')
+```
+
+See for example [test/node_modules/strict-mode/index.js](https://github.com/fibo/strict-mode/blob/master/test/node_modules/strict-mode/index.js)
+used in this package.
+
+Then you can use `require('pakage-name')` in your tests.
+
 ## Credits
 
-Code **stolen** from isaacs' [use-strict][1].
+Code **stolen** from isaacs' [use-strict].
 
 ## License
 
 [MIT](http://g14n.info/mit-license)
 
-[1]: https://npmjs.org/package/use-strict
-
+[use-strict]: https://npmjs.org/package/use-strict
