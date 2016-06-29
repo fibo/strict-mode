@@ -17,7 +17,7 @@ var strictWrapper = origWrapper + '"use strict";'
  */
 
 function strictMode (callback) {
-  "use strict";
+  'use strict'
 
   if (typeof callback !== 'function') {
     throw new TypeError('Argument *callback* must be a function')
@@ -34,8 +34,11 @@ function strictMode (callback) {
       module.wrapper[0] = strictWrapper
 
       // Every require in this callback will load modules in strict mode.
-      try { callback() }
-      catch (err) { console.error(err.stack) }
+      try {
+        callback()
+      } catch (err) {
+        console.error(err.stack)
+      }
 
       // Restore orig module wrapper, play well with others.
       module.wrapper[0] = origWrapper
