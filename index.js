@@ -1,12 +1,3 @@
-// The module api is in *Locked* state, so it will not change
-// see http://nodejs.org/api/modules.html
-// that is why I just copyed and pasted the orig module wrapper.
-//
-// By the way, in test.js checks if the content of *origWrapper* needs an update.
-
-var origWrapper = '(function (exports, require, module, __filename, __dirname) { '
-var strictWrapper = origWrapper + '"use strict";'
-
 /**
  * Wraps module `exports`
  *
@@ -19,11 +10,21 @@ var strictWrapper = origWrapper + '"use strict";'
 function strictMode (callback) {
   'use strict'
 
+  // The module api is in *Locked* state, so it will not change
+  // see http://nodejs.org/api/modules.html
+  // that is why I just copyed and pasted the orig module wrapper.
+  //
+  // By the way, in test.js there is a test that checks if the content of
+  // *origWrapper* needs an update.
+
+  const origWrapper = '(function (exports, require, module, __filename, __dirname) { '
+  const strictWrapper = origWrapper + '"use strict";'
+
   if (typeof callback !== 'function') {
     throw new TypeError('Argument *callback* must be a function')
   }
 
-  var module = require('module')
+  const module = require('module')
 
   if (typeof module.wrapper === 'undefined') {
     // If you enter here, you are in a context other than server side Node.js.
