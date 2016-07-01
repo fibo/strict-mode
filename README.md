@@ -95,7 +95,7 @@ In both cases you miss the feature provided by *strict-mode*, but, you can
 use this nasty trick ( to cheat npm :^)
 
 Assuming you package name is, emh *package-name*, create a file
-*test/node_modules/package_name/index.js* containing
+*test/node_modules/package-name/index.js* containing
 
 ```javascript
 module.exports = require('../../..')
