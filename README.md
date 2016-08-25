@@ -19,14 +19,13 @@ npm install strict-mode
 ## Usage
 
 **Please note that this package is intended to be used server side.**
-If used with [browserify](http://browserify.org/) it is a [no op](https://github.com/fibo/strict-mode/blob/master/browser.js).
+If used with [browserify] it is a [no op](https://github.com/fibo/strict-mode/blob/master/browser.js).
 
 Suppose that the *main attribute* in your *package.json* is *index.js*.
-
 If you want that all the modules in your package has strict mode enabled,
 just wrap your *index.js* this way
 
-```js
+```javascript
 require('strict-mode')(function () {
 
 // your index.js content
@@ -114,4 +113,5 @@ Code **stolen** from isaacs' [use-strict].
 
 [MIT](http://g14n.info/mit-license)
 
-[use-strict]: https://npmjs.org/package/use-strict
+[use-strict]: https://npmjs.org/package/use-strict "use-strict"
+[browserify]: http://browserify.org/ "browserify"

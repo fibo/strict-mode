@@ -2,7 +2,6 @@
  * Wraps module `exports`
  *
  * See [Usage](http://npm.im/strict-mode#usage)
- * )
  *
  * @param {Function} callback containing caller package's exports statements
  */
