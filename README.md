@@ -108,6 +108,7 @@ Then you can use `require('package-name')` in your tests.
 ## Credits
 
 Code **stolen** from isaacs' [use-strict].
+A big thank to [MDN](https://developer.mozilla.org) cause it is an awesome knowledge base for everything related with the Web: in particular, I could find some valid counterexamples of strict mode to include in my tests.
 
 ## License
 
