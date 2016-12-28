@@ -11,24 +11,18 @@
   "main": "index.js",
   "browser": "browser.js",
   "scripts": {
-    "lint": "standard",
-    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "test": "tape test/index.js"
   },
-  "pre-commit": [
-    "lint",
-    "test"
-  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/fibo/strict-mode.git"
   },
   "keywords": [
-    "strict"
+    "strict",
+    "use strict",
+    "strict mode"
   ],
   "devDependencies": {
-    "pre-commit": "^1.1.2",
-    "standard": "^8.0.0",
     "tape": "^4.2.0"
   }
 }

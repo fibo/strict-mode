@@ -37,7 +37,7 @@ require('strict-mode')(function () {
 
 ## Motivation
 
-[Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode) is a best practice but adding a `"use strict";` on top of every *.js* file in your package could
+[Strict mode][MDN_Strict_mode] is a best practice but adding a `"use strict";` on top of every *.js* file in your package could
 
 * require a big effort
 * be error proning
@@ -53,7 +53,7 @@ At the time of this writing [Node v4 stable](https://nodejs.org/en/blog/release/
 Finally we can use `class`, `let`, `const` (among other new exciting features) but you will notice that if you do not turn on strict mode an exception will raise.
 For instance, a file *Point2d.js* with content
 
-```
+```javascript
 class Point2d {
   constructor (x, y) {
     this.x = x
@@ -72,7 +72,7 @@ SyntaxError: Block-scoped declarations (let, const, function, class) not yet sup
 
 but if you wrap the import with *strict-mode* everything will just work
 
-```
+```javascript
 require('strict-mode')(function () {
 
   var Point2d = require('./Point2d')
@@ -100,8 +100,7 @@ Assuming you package name is, emh *package-name*, create a file
 module.exports = require('../../..')
 ```
 
-See for example [test/node_modules/strict-mode/index.js](https://github.com/fibo/strict-mode/blob/master/test/node_modules/strict-mode/index.js)
-used in this package.
+See for example [test/node_modules/strict-mode/index.js] used in this package.
 
 Then you can use `require('package-name')` in your tests.
 
@@ -114,5 +113,7 @@ A big thank to [MDN](https://developer.mozilla.org) cause it is an awesome knowl
 
 [MIT](http://g14n.info/mit-license)
 
-[use-strict]: https://npmjs.org/package/use-strict "use-strict"
 [browserify]: http://browserify.org/ "browserify"
+[MDN_Strict_mode]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode
+[test/node_modules/strict-mode/index.js]: https://github.com/fibo/strict-mode/blob/master/test/node_modules/strict-mode/index.js
+[use-strict]: https://npmjs.org/package/use-strict "use-strict"
