@@ -27,7 +27,7 @@ function strictMode (callback) {
 
   if (typeof module.wrapper === 'undefined') {
     // If you enter here, you are in a context other than server side Node.js.
-    // Since module.wrapper it is not defined do not switch strict mode on.
+    // Since module.wrapper is not defined, do not switch strict mode on.
     callback()
   } else {
     if (module.wrapper[0] === origWrapper) {
