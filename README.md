@@ -22,7 +22,7 @@ npm install strict-mode
 If used with [browserify] it is a [no op](https://github.com/fibo/strict-mode/blob/master/browser.js).
 
 Suppose that the *main attribute* in your *package.json* is *index.js*.
-If you want that all the modules in your package has strict mode enabled,
+If you want that all the modules in your package have strict mode enabled,
 just wrap your *index.js* this way
 
 ```javascript
