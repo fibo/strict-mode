@@ -1,7 +1,7 @@
 {
   "name": "strict-mode",
   "description": "enables strict mode in your package",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "homepage": "http://g14n.info/strict-mode",
   "author": {
     "name": "Gianluca Casati",
@@ -11,6 +11,7 @@
   "main": "index.js",
   "browser": "browser.js",
   "scripts": {
+    "postversion": "git push origin v${npm_package_version}; npm publish; npm run push",
     "test": "tape test/index.js"
   },
   "repository": {
