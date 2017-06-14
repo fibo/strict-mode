@@ -1,7 +1,7 @@
 {
   "name": "strict-mode",
   "description": "enables strict mode in your package",
-  "version": "1.1.0",
+  "version": "1.0.2",
   "homepage": "http://g14n.info/strict-mode",
   "author": {
     "name": "Gianluca Casati",
