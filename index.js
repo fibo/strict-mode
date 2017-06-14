@@ -1,7 +1,7 @@
 /**
  * Wraps module `exports`
  *
- * See [Usage](http://npm.im/strict-mode#usage)
+ * See [Usage](http://g14n.info/strict-mode#usage)
  *
  * @param {Function} callback containing caller package's exports statements
  */

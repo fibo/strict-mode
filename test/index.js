@@ -4,11 +4,7 @@ const test = require('tape')
 const origWrapper = '(function (exports, require, module, __filename, __dirname) { '
 
 test('strict-mode', (t) => {
-  t.plan(5)
-
-  t.throws(() => {
-    require('./nested/quz')
-  }, 'require nested/quz.js throws cause is not strict')
+  t.plan(4)
 
   const Quz = require('./nested').foo.bar.Quz
 

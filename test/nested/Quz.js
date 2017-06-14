@@ -1,7 +1,7 @@
-class quz {
+class Quz {
   constructor () {
     this.ok = true
   }
 }
 
-module.exports = quz
+module.exports = Quz

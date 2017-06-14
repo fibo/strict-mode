@@ -11,6 +11,7 @@
   "main": "index.js",
   "browser": "browser.js",
   "scripts": {
+    "lint": "standard",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "test": "tape test/index.js"
   },
@@ -24,6 +25,7 @@
     "strict mode"
   ],
   "devDependencies": {
-    "tape": "^4.2.0"
+    "standard": "^10.0.2",
+    "tape": "^4.6.3"
   }
 }
