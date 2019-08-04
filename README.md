@@ -86,7 +86,7 @@ require('strict-mode')(function () {
 
 Usually you write tests importing your library. You can do that in two ways:
 
-* using `require('../../path/to/my/module')`
+* using `require('../src/my/module')`
 * or setting `NODE_PATH=src` and using `require('my/module')`
 
 In both cases you miss the feature provided by *strict-mode*, but, you can
