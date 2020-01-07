@@ -12,8 +12,10 @@
 With [npm](https://npmjs.org/) do
 
 ```bash
-npm install strict-mode
+npm install strict-mode --save-dev
 ```
+
+**NOTA BENE** you may want to install *strict-mode* as a development dependency, see [Bonus Tip below](#bonus-tip).
 
 ## Usage
 
@@ -83,24 +85,50 @@ require('strict-mode')(function () {
 
 ## Bonus tip
 
-Usually you write tests importing your library. You can do that in two ways:
+You could use *strict-mode* just as a development dependency.
 
-* using `require('../src/my/module')`
-* or setting `NODE_PATH=src` and using `require('my/module')`
+Following the instructions below, you are not going to deploy *strict-mode* on production but when you run your tests **if some code is not strict, then you will get an error**.
 
-In both cases you miss the feature provided by *strict-mode*, but, you can
-use this nasty trick ( to cheat npm :^)
+Suppose you have the following folder structure in your package.
 
-Assuming you package name is, emh *package-name*, create a file
-*test/node_modules/package-name/index.js* containing
+    .
+    ├── package.json
+    ├── src
+    │   └── index.js    # your package.json `main` entry
+    └── test
+        ├── test1.js
+        └── test2.js
+
+Assuming you package name is, emh *my-package*, create a file *test/my-package.js* containing
 
 ```javascript
-module.exports = require('../../..')
+require('strict-mode')(function () {
+  module.exports = require('../src/index.js')
+})
 ```
 
-See for example [test/node_modules/strict-mode/index.js] used in this package.
+Now if you set the environment variable `NODE_PATH=test`, you can use `require('my-package')` in your tests.
 
-Then you can use `require('package-name')` in your tests.
+For instance if you are using *tape* you can add this to your *package.json*
+
+```json
+    "test": "NODE_PATH=test tape test/*js"
+```
+
+You can also achieve the same result without `NODE_PATH` environment variable, using this nasty trick (to cheat npm :^)
+Instead of *test/my-package.js*, create a *test/node_modules/my-package/index.js* containing
+
+```javascript
+require('strict-mode')(function () {
+  module.exports = require('../../../src/index.js')
+})
+```
+
+Notice also that you will probably need to force git add, for instance
+
+```bash
+git add -f test/node_modules/my-package/index.js
+```
 
 ## Credits
 
