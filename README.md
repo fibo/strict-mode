@@ -40,11 +40,10 @@ require('strict-mode')(function () {
 
 * require a big effort
 * be error proning
-* make complain jshint
+* make complain linters (like eslint, jshint, etc.)
 * be a problem when concatenating files
 
-On the other hand the [use-strict] package solution is too invasive, cause
-it applies strictness to **all** future modules loaded.
+On the other hand the [use-strict] package solution is too invasive, cause it applies strictness to **all** future modules loaded.
 
 ## Use case
 

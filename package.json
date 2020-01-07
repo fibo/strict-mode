@@ -8,12 +8,12 @@
     "url": "http://g14n.info"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "strict-mode.js",
   "browser": "browser.js",
   "scripts": {
     "lint": "standa --fix",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
-    "test": "tape test/index.js"
+    "test": "NODE_PATH=. tape test/strict-mode.test.js"
   },
   "repository": {
     "type": "git",
@@ -24,8 +24,5 @@
     "use strict",
     "strict mode"
   ],
-  "devDependencies": {
-    "standa": "^2.1.0",
-    "tape": "^4.9.1"
-  }
+  "devDependencies": {}
 }
