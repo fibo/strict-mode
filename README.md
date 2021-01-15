@@ -3,7 +3,6 @@
 > enables strict mode in your package
 
 [![NPM version](https://badge.fury.io/js/strict-mode.svg)](http://badge.fury.io/js/strict-mode)
-[![Build Status](https://travis-ci.org/fibo/strict-mode.svg?branch=master)](https://travis-ci.org/fibo/strict-mode?branch=master)
 [![No deps](https://img.shields.io/badge/dependencies-none-green.svg)](https://github.com/fibo/strict-mode)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
