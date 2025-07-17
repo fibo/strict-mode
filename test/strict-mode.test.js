@@ -1,27 +1,26 @@
-var module = require('module')
-const test = require('tape')
+const _module = require('node:module')
+const { test } = require('node:test')
+const { strict: assert } = require('node:assert')
 
 const origWrapper = '(function (exports, require, module, __filename, __dirname) { '
 
-test('strict-mode', (t) => {
-  t.plan(4)
-
+test('strict-mode', () => {
   const Quz = require('./nested').foo.bar.Quz
 
   const quz = new Quz()
 
-  t.ok(quz.ok, 'nested invocation')
+  assert.ok(quz.ok, 'nested invocation')
 
-  t.doesNotThrow(() => {
+  assert.doesNotThrow(() => {
     const noStrictCode1 = require('./noStrictCode1')
     noStrictCode1()
   }, 'running noStrictCode1.js does not throw')
 
   require('strict-mode')(() => {
-    t.throws(() => {
+    assert.throws(() => {
       require('./noStrictCode2')()
     }, 'running noStrictCode2 throws cause required with strict-mode')
   })
 
-  t.equal(module.wrapper[0], origWrapper, 'origWrapper is unchanged')
+  assert.equal(_module.wrapper[0], origWrapper, 'origWrapper is unchanged')
 })

@@ -2,7 +2,7 @@
 
 > enables strict mode in your package
 
-[![No deps](https://fibo.github.io/svg/badges/dependencies-none.svg)](https://github.com/fibo/strict-mode)
+![No deps](https://fibo.github.io/svg/badges/dependencies-none.svg)
 
 ## Usage
 

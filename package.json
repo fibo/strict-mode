@@ -8,9 +8,8 @@
   },
   "license": "MIT",
   "main": "strict-mode.js",
-  "browser": "browser.js",
   "scripts": {
-    "test": "NODE_PATH=. tape test/strict-mode.test.js"
+    "test": "NODE_PATH=. node --test test/strict-mode.test.js"
   },
   "repository": {
     "type": "git",
