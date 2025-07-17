@@ -1,7 +1,7 @@
 /**
  * Wraps module `exports`
  *
- * See [Usage](https://github.com/fibo/strict-mode/blob/master/README.md#usage)
+ * See [Usage](https://github.com/fibo/strict-mode/blob/main/README.md#usage)
  *
  * @param {() => void} callback containing caller package's exports statements
  */

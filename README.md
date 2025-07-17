@@ -123,10 +123,9 @@ A big thank to [MDN](https://developer.mozilla.org) cause it is an awesome knowl
 
 ## License
 
-[MIT](https://github.com/fibo/strict-mode/blob/master/LICENSE)
+[MIT](https://github.com/fibo/strict-mode/blob/main/LICENSE)
 
 [browserify]: http://browserify.org/ "browserify"
 [MDN_Strict_mode]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode
-[no op]: https://github.com/fibo/strict-mode/blob/master/browser.js "browser.js"
-[test/node_modules/strict-mode/index.js]: https://github.com/fibo/strict-mode/blob/master/test/node_modules/strict-mode/index.js
+[test/node_modules/strict-mode/index.js]: https://github.com/fibo/strict-mode/blob/main/test/node_modules/strict-mode/index.js
 [use-strict]: https://npmjs.org/package/use-strict "use-strict"
