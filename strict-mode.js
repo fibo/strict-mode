@@ -1,9 +1,9 @@
 /**
  * Wraps module `exports`
  *
- * See [Usage](http://g14n.info/strict-mode#usage)
+ * See [Usage](https://github.com/fibo/strict-mode/blob/master/README.md#usage)
  *
- * @param {Function} callback containing caller package's exports statements
+ * @param {() => void} callback containing caller package's exports statements
  */
 
 function strictMode (callback) {

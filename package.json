@@ -2,17 +2,14 @@
   "name": "strict-mode",
   "description": "enables strict mode in your package",
   "version": "1.1.5",
-  "homepage": "http://g14n.info/strict-mode",
   "author": {
     "name": "Gianluca Casati",
-    "url": "http://g14n.info"
+    "url": "https://fibo.github.io"
   },
   "license": "MIT",
   "main": "strict-mode.js",
   "browser": "browser.js",
   "scripts": {
-    "lint": "standa --fix",
-    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "test": "NODE_PATH=. tape test/strict-mode.test.js"
   },
   "repository": {

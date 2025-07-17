@@ -2,24 +2,11 @@
 
 > enables strict mode in your package
 
-[![NPM version](https://badge.fury.io/js/strict-mode.svg)](http://badge.fury.io/js/strict-mode)
-[![No deps](https://img.shields.io/badge/dependencies-none-green.svg)](https://github.com/fibo/strict-mode)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
-## Installation
-
-With [npm](https://npmjs.org/) do
-
-```bash
-npm install strict-mode --save-dev
-```
-
-**NOTA BENE** you may want to install *strict-mode* as a development dependency, see [Bonus Tip below](#bonus-tip).
+[![No deps](https://fibo.github.io/svg/badges/dependencies-none.svg)](https://github.com/fibo/strict-mode)
 
 ## Usage
 
-**Please note that this package is intended to be used server side.**
-If used with [browserify] it is a [no op].
+**Please notice that this package is intended to be used server side and with CommonJS only.**
 
 Suppose that the *main attribute* in your *package.json* is *index.js*.
 If you want that all the modules in your package have strict mode enabled,
@@ -136,7 +123,7 @@ A big thank to [MDN](https://developer.mozilla.org) cause it is an awesome knowl
 
 ## License
 
-[MIT](http://g14n.info/mit-license)
+[MIT](https://github.com/fibo/strict-mode/blob/master/LICENSE)
 
 [browserify]: http://browserify.org/ "browserify"
 [MDN_Strict_mode]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode
